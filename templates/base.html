@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <title>Meme Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+</head>
+<body>
+    <header>
+        <h1>Meme Maker Pro</h1>
+        <p>Galaxy's Best Meme Maker</p>
+    </header>
+    <main>
+        <section>
+            <p>Fist Line of Meme</p>
+            <img src="{{ url_for('static', filename='index.png') }}" alt="">
+            <p>Last Line of Meme</p>
+        </section>
+    </main>
+</body>
+</html>
