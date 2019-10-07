@@ -1,10 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def make_meme():
     return render_template('base.html',
                            name="MRK",
-                           first_line='Fist Line of Meme',
-                           last_line='Last Line of Meme')
+                           first_line=request.form.get('first_line'),
+                           last_line=request.form.get('last_line'))
