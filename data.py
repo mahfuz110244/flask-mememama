@@ -15,6 +15,9 @@ def save_memes():
 def get_meme(meme_id: int):
     return memes[meme_id]
 
+def get_all_memes():
+    return memes
+
 def add_meme(first_line: str, last_line: str):
     memes.append({
             'first_line': first_line,

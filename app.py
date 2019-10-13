@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, abort
-from data import add_meme, get_meme, load_memes
+from data import add_meme, get_meme, load_memes, get_all_memes
 
 app = Flask(__name__)
 
@@ -13,10 +13,14 @@ def make_meme():
     if request.method == 'POST':
         add_meme(first_line, last_line)
 
-    return render_template('base.html',
+    return render_template('create.html',
                            name="MRK",
                            first_line=first_line,
                            last_line=last_line)
+
+@app.route('/list')
+def list_memes():
+    return render_template('list.html', memes=get_all_memes())
 
 @app.route('/view/<int:meme_id>')
 def view_meme(meme_id):

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+     <section class="center">
+            <form action="/" method="post">
+                <input type="text" name="first_line" placeholder="the first line of text" valye="{{ first_line }}">
+                <input type="text" name="last_line" placeholder="the last line of text"  valye="{{ last_line }}">
+                <input type="submit" name="submit" placeholder="Submit">
+        </form>
+     </section>
+     <section class="center">
+        <p>{{ first_line }}</p>
+        <img src="{{ url_for('static', filename='index.png') }}" alt="">
+        <p>{{ last_line }}</p>
+     </section>
+{% endblock %}

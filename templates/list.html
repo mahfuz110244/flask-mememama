@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section>
+        <ul>
+            {% for meme in memes %}
+                <li><a href="/view/{{ loop.index0 }}">{{ meme['first_line']}} - {{ meme['last_line'] }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
